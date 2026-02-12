@@ -106,3 +106,23 @@ pnpm run lint
 pnpm run build
 pnpm run preview
 ```
+
+ER Diagram
+```mermaid
+erDiagram
+
+    Objective {
+        string id PK "UUID"
+        string title
+        string description
+    }
+
+    KeyResult {
+        string id PK "UUID"
+        string description
+        boolean isCompleted "default: false"
+        string objectiveId FK
+    }
+
+    Objective ||--o{ KeyResult : contains
+```
